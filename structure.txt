@@ -1,0 +1,33 @@
+storage_test_suite/
+├── enstore/
+│   ├── tape/
+│   │   ├── spectralogic/
+│   │   └── ibm/
+│   ├── disk/
+│   │   ├── spectralogic/
+│   │   └── ibm/
+├── cta/
+│   ├── tape/
+│   │   ├── spectralogic/
+│   │   └── ibm/
+│   ├── disk/
+│   │   ├── spectralogic/
+│   │   └── ibm/
+├── tests/
+│   ├── enstore/
+│   │   ├── tape/
+│   │   │   ├── spectralogic_test.py
+│   │   │   └── ibm_test.py
+│   │   ├── disk/
+│   │   │   ├── spectralogic_test.py
+│   │   │   └── ibm_test.py
+│   ├── cta/
+│   │   ├── tape/
+│   │   │   ├── spectralogic_test.py
+│   │   │   └── ibm_test.py
+│   │   ├── disk/
+│   │   │   ├── spectralogic_test.py
+│   │   │   └── ibm_test.py
+├── cli.py
+├── setup.py
+└── requirements.txt
