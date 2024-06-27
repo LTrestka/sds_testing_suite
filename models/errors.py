@@ -17,3 +17,11 @@ class ConfigurationError(Exception):
             if not getattr(config, item):
                 missing.append(item)
         super().__init__(f"Configuration items missing: {missing}")
+
+class ExecutionError(Exception):
+    """Exception raised when a required service is not installed."""
+    def __init__(self, cmd=None):
+        if not cmd:
+            super().__init__(f"ExecutionError | No command specified")
+        else:
+            super().__init__(f"ExecutionError | Command Failed, please review | Command: {cmd}")
