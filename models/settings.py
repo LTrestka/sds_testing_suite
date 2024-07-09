@@ -29,7 +29,7 @@ class Configuration:
         return self.node != socket.gethostname()
     
     def is_valid(self):
-        return self.node and self.service and self.device and self.mover
+        return bool(self.node and self.service) # and (self.device and self.mover)
     
     def get(self):
         return f"""
@@ -44,6 +44,6 @@ else
             service:  {self.service}
         device_type:  {self.device}
          mover_type:  {self.mover}
- ***************************************************
+****************************************************
                 """
         

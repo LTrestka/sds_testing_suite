@@ -1,4 +1,6 @@
 import builtins
+import json
+import os
 
 # Save the original print function
 original_print = builtins.print
@@ -6,6 +8,11 @@ original_print = builtins.print
 # Global variables for quiet and verbose modes
 quiet = False
 verbose = False
+
+SUPPORTED_WORKFLOWS = {
+    "cta": {},
+    "enstore": {}
+}                    
 
 def custom_print(*args, **kwargs):
     global quiet
@@ -23,8 +30,8 @@ def printv(*args, **kwargs):
     if not verbose:
         return
     # Call the original print function
-    modified_args = ["[Verbose]"] + list(args)
-    original_print(*modified_args, **kwargs)
+    modified_args = ["\n[Verbose]"] + list(args)
+    custom_print(*modified_args, **kwargs)
     
 # Replace the built-in print with the custom print
 builtins.print = custom_print
